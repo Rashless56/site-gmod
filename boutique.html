@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Boutique - Serveur GMod</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .paypal-button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 25px;
+      background: #ffc439;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    .paypal-button:hover {
+      background: #e6b02a;
+    }
+    a {
+      color: #1e90ff;
+      text-decoration: none;
+      font-size: 1em;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; background: #222; color: #fff; text-align: center; padding: 40px;">
+<body>
   <h1>🛒 Boutique du Serveur</h1>
   <p>Soutenez le serveur et obtenez des avantages !</p>
 
-  <!-- Exemple de bouton PayPal -->
-  <form action="paypal.me/GateSCP" method="post" target="_blank">
-    <input type="hidden" name="hosted_button_id" value="TON_ID_PAYPAL">
-    <input type="submit" value="Faire un don via PayPal" style="padding: 10px 20px; background: #ffc439; border: none; border-radius: 8px; cursor: pointer;">
-  </form>
+  <a href="https://paypal.me/GateSCP" target="_blank" rel="noopener noreferrer" class="paypal-button" aria-label="Faire un don via PayPal">
+    Faire un don via PayPal
+  </a>
 
   <p>Merci pour votre soutien ❤️</p>
-  <a href="index.html" style="color: #1e90ff;">← Retour à l'accueil</a>
+  <a href="index.html">← Retour à l'accueil</a>
 </body>
 </html>
