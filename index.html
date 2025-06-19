@@ -4,24 +4,116 @@
   <meta charset="UTF-8">
   <title>Serveur GMod - Accueil</title>
   <style>
-    body { background: #121212; color: #fff; font-family: sans-serif; text-align: center; padding: 40px; }
-    a.button {
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 30px 10px 10px;
+    }
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+    nav {
+      margin-top: 20px;
+    }
+    .button {
       background-color: #1e90ff;
       color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 10px 20px;
       text-decoration: none;
-      margin: 10px;
+      border-radius: 8px;
+      margin: 5px;
       display: inline-block;
     }
-    h1 { font-size: 36px; }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 40px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+    }
+    .image {
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+    }
+    .center {
+      flex-grow: 1;
+      padding: 0 40px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #1e1e1e;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #333;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .about {
+      margin-top: 60px;
+      padding: 30px;
+      background-color: #1a1a1a;
+    }
   </style>
 </head>
 <body>
-  <h1>Bienvenue sur notre serveur GMod !</h1>
-  <p>Rejoignez une communauté active et amusante sur Garry's Mod.</p>
-  <a class="button" href="reglement.html">📜 Règlement</a>
-  <a class="button" href="boutique.html">🛒 Boutique</a>
-  <a class="button" href="mises-a-jour.html">📰 Mises à jour</a>
+  <header>
+    <img src="logo.png" alt="Logo Serveur" class="logo">
+    <h1>Bienvenue sur notre serveur GMod !</h1>
+    <p>Rejoignez une communauté active et amusante sur Garry's Mod.</p>
+    <nav>
+      <a class="button" href="reglement.html">📜 Règlement</a>
+      <a class="button" href="boutique.html">🛒 Boutique</a>
+      <a class="button" href="mises-a-jour.html">📰 Mises à jour</a>
+
+      <div class="dropdown">
+        <a class="button">🎭 Rôles</a>
+        <div class="dropdown-content">
+          <a href="#">🎯 Objectif</a>
+          <a href="reglement.html">📜 Règlement</a>
+          <a href="#">🛠️ Fonctionnement</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="content">
+    <img src="image1.png" alt="Image gauche" class="image">
+    <div class="center">
+      <p>Explorez notre monde unique, scripté avec soin pour le fun et l'immersion !</p>
+    </div>
+    <img src="image2.png" alt="Image droite" class="image">
+  </section>
+
+  <section class="about">
+    <h2>À propos</h2>
+    <p>Notre serveur Garry's Mod est une aventure passionnée par une équipe motivée. On cherche à proposer une expérience RP fun, stable, et libre d'abus !</p>
+    <p>Rejoignez-nous sur Discord ou en jeu pour en savoir plus.</p>
+  </section>
 </body>
 </html>
