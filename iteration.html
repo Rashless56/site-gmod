@@ -16,19 +16,23 @@
     margin-bottom: 30px;
   }
   section {
-    background-color: #1f1f1f;
-    border-left: 5px solid #4caf50;
+    border-left: 5px solid;
     padding: 15px 20px;
     margin-bottom: 20px;
     border-radius: 4px;
+    background-color: #1f1f1f;
   }
+  /* Couleurs selon niveau */
+  section.niveau-0 { border-color: #888888; } /* gris pour Niveau 0 */
+  section.niveau-1 { border-color: #4caf50; } /* vert foncé */
+  section.niveau-2 { border-color: #81c784; } /* vert clair */
+  section.niveau-3 { border-color: #ffeb3b; color: #333; } /* jaune avec texte plus sombre */
+  section.niveau-4 { border-color: #f5f5dc; color: #333; } /* beige clair avec texte plus sombre */
+  section.niveau-5 { border-color: #ff9800; } /* orange */
+  section.niveau-6 { border-color: #f44336; } /* rouge */
+
   h2 {
     margin-top: 0;
-    color: #81c784;
-  }
-  p {
-    margin: 8px 0;
-    line-height: 1.5;
   }
 </style>
 </head>
@@ -36,43 +40,48 @@
 
 <h1>Itération - Niveaux de connaissance SCP</h1>
 
-<section>
+<section class="niveau-0">
   <h2>Niveau 0</h2>
   <p>Aucune connaissance des anomalies sauf basique, pour les Safe se baladant dans l'installation.</p>
   <p>Vous avez connaissance des FIM comme simple renfort.</p>
   <p>Aucune connaissance des groupes d’intérêt.</p>
 </section>
 
-<section>
+<section class="niveau-1">
   <h2>Niveau 1</h2>
   <p>Connaissance des SCP Safe (sauf 1025) sur site et SCP 173.</p>
   <p>Vous avez connaissance des FIM comme simple renfort.</p>
   <p>Aucune connaissance des groupes d’intérêt.</p>
 </section>
 
-<section>
+<section class="niveau-2">
   <h2>Niveau 2</h2>
   <p>Connaissance de tous les SCP Safe à Euclide et aussi de comment vous comporter pour survivre face au SCP keter présent sur sites.</p>
   <p>Vous avez connaissance des FIM comme simple renfort.</p>
   <p>Vous ne connaissez pas les groupes d’intérêt mais vous savez que des gens veulent s’en prendre à la fondation.</p>
 </section>
 
-<section>
+<section class="niveau-3">
   <h2>Niveau 3</h2>
   <p>Connaissance de tous les SCP Safe à Keter présent sur site et leur mesure de reconfinement.</p>
   <p>Vous avez connaissance des FIM et des spécialités concernant les brèches et intrusions.</p>
   <p>Vous connaissez aussi les groupes d’intérêt les plus importants.</p>
 </section>
 
-<section>
+<section class="niveau-4">
   <h2>Niveau 4</h2>
   <p>Connaissance parfaite de toutes les anomalies sur sites et hors sites si nécessaire à votre travail, comment survivre et comment confiner ceux-ci.</p>
   <p>Vous avez connaissance de toutes les FIM et des groupes d’intérêt.</p>
 </section>
 
-<section>
+<section class="niveau-5">
   <h2>Niveau 5</h2>
   <p>Connaît absolument tout sur et hors site.</p>
+</section>
+
+<section class="niveau-6">
+  <h2>Niveau 6</h2>
+  <p>Niveau ultime, danger extrême, connaissances très confidentielles et accès limité.</p>
 </section>
 
 </body>
