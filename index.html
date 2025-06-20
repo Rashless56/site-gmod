@@ -2,9 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serveur GMod - Accueil</title>
   <style>
+    /* Ton CSS existant + compléments */
+
     * {
       margin: 0;
       padding: 0;
@@ -55,19 +57,26 @@
       margin: 5px;
       display: inline-block;
       transition: background 0.3s;
+      cursor: pointer;
     }
-    .button:hover {
+    .button:hover,
+    .button:focus {
       background-color: #0f75d1;
+      outline: none;
     }
     .dropdown {
       position: relative;
       display: inline-block;
     }
+    .dropdown > .button::after {
+      content: " ▼";
+      font-size: 0.6em;
+    }
     .dropdown-content {
       display: none;
       position: absolute;
       background-color: #1e1e1e;
-      min-width: 160px;
+      min-width: 180px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
       border-radius: 8px;
       z-index: 2;
@@ -79,10 +88,13 @@
       display: block;
       text-align: left;
     }
-    .dropdown-content a:hover {
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
       background-color: #333;
+      outline: none;
     }
-    .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
       display: block;
     }
     .steam-collection {
@@ -102,7 +114,7 @@
     /* Carrousel styles */
     .carousel-container {
       position: relative;
-      width: 600px; /* 3 images x 180px wide */
+      width: 600px;
       margin: 0 auto 20px;
       overflow: hidden;
       border-radius: 12px;
@@ -110,13 +122,13 @@
     .carousel-track {
       display: flex;
       transition: transform 1s ease;
-      width: max-content; /* largeur automatique en fonction du contenu */
+      width: max-content;
     }
     .carousel-slide {
       display: flex;
-      width: 600px; /* largeur d'un slide = 3 images * 180px */
+      width: 600px;
       justify-content: space-between;
-      flex-shrink: 0; /* empêche le rétrécissement */
+      flex-shrink: 0;
     }
     .carousel-slide img {
       width: 180px;
@@ -133,210 +145,238 @@
       text-align: center;
       z-index: 1;
     }
+    /* Responsive */
+    @media (max-width: 800px) {
+      .side-image {
+        display: none;
+      }
+      .main-content, .about {
+        margin: 0 10px;
+        padding: 20px 10px;
+      }
+      .carousel-container {
+        width: 100%;
+      }
+      .carousel-slide {
+        width: 100%;
+      }
+      .carousel-slide img {
+        width: 30vw;
+        height: auto;
+      }
+    }
+
+    /* Contrôles carrousel */
+    .carousel-controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .carousel-controls button {
+      background: #1e90ff;
+      border: none;
+      padding: 8px 12px;
+      margin: 0 5px;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .carousel-controls button:hover,
+    .carousel-controls button:focus {
+      background: #0f75d1;
+      outline: none;
+    }
   </style>
 </head>
 <body>
 
   <!-- Images étendues -->
-  <img src="image1.png" alt="Image gauche" class="side-image left-image" />
-  <img src="image2.png" alt="Image droite" class="side-image right-image" />
+  <img src="image1.png" alt="Décor à gauche" class="side-image left-image" />
+  <img src="image2.png" alt="Décor à droite" class="side-image right-image" />
 
   <!-- Contenu principal -->
-  <div class="main-content">
-    <img src="logo.png" alt="Logo Serveur" class="logo" />
+  <div class="main-content" role="main">
+    <img src="logo.png" alt="Logo du Serveur GMod" class="logo" />
     <h1>Bienvenue sur notre serveur GMod !</h1>
     <p>Rejoignez une communauté active et amusante sur Garry's Mod.</p>
 
-    <nav style="margin-top: 20px;">
+    <nav aria-label="Navigation principale" style="margin-top: 20px;">
       <a class="button" href="reglement.html">📜 Règlement</a>
       <a class="button" href="boutique.html">🛒 Boutique</a>
       <a class="button" href="mises-a-jour.html">📰 Mises à jour</a>
 
-      <div class="dropdown">
-        <a class="button">🎭 Rôles</a>
-        <div class="dropdown-content">
-          <a href="iteration.html">Les itérations</a>
-          <a href="classe_d.html">Classe D</a>
-          <a href="corps_securite.html">Département du Corps de sûreté</a>
-          <a href="departement_administratif.html">Département administratif</a>
-          <a href="departement_medical.html">Département médicale</a>
-          <a href="departement_technique.html">Département Ingénierie et Service Technique</a>
-          <a href="departement_scientifique.html">Département Scientifique et de Recherche</a>
-          <a href="SCP.html">SCP</a>
+      <div class="dropdown" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Menu des rôles">
+        <a class="button" href="#" aria-haspopup="true" aria-expanded="false">🎭 Rôles</a>
+        <div class="dropdown-content" role="menu">
+          <a href="iteration.html" role="menuitem" tabindex="-1">Les itérations</a>
+          <a href="classe_d.html" role="menuitem" tabindex="-1">Classe D</a>
+          <a href="corps_securite.html" role="menuitem" tabindex="-1">Département du Corps de sûreté</a>
+          <a href="departement_administratif.html" role="menuitem" tabindex="-1">Département administratif</a>
+          <a href="departement_medical.html" role="menuitem" tabindex="-1">Département médical</a>
+          <a href="departement_technique.html" role="menuitem" tabindex="-1">Département Ingénierie et Service Technique</a>
+          <a href="departement_scientifique.html" role="menuitem" tabindex="-1">Département Scientifique et de Recherche</a>
+          <a href="SCP.html" role="menuitem" tabindex="-1">SCP</a>
         </div>
       </div>
     </nav>
 
     <!-- Section Steam -->
-    <section class="steam-collection">
+    <section class="steam-collection" aria-label="Collection Steam des addons">
       <h2>📦 Collection Steam</h2>
       <p>Découvrez les addons utilisés sur notre serveur pour profiter de la meilleure expérience !</p>
 
-      <div class="carousel-container">
+      <div class="carousel-container" aria-live="polite" aria-atomic="true">
         <div class="carousel-track" id="carouselTrack">
-          <div class="carousel-slide">
+          <!-- slides identiques à ta liste -->
+          <!-- exemple abrégé : -->
+          <div class="carousel-slide" aria-hidden="false">
             <img src="addons-images/addon1.png" alt="Addon 1" />
             <img src="addons-images/addon2.png" alt="Addon 2" />
             <img src="addons-images/addon3.png" alt="Addon 3" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon4.png" alt="Addon 4" />
             <img src="addons-images/addon5.png" alt="Addon 5" />
             <img src="addons-images/addon6.png" alt="Addon 6" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon7.png" alt="Addon 7" />
             <img src="addons-images/addon8.png" alt="Addon 8" />
             <img src="addons-images/addon9.png" alt="Addon 9" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon10.png" alt="Addon 10" />
             <img src="addons-images/addon11.png" alt="Addon 11" />
             <img src="addons-images/addon12.png" alt="Addon 12" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon13.png" alt="Addon 13" />
             <img src="addons-images/addon14.png" alt="Addon 14" />
             <img src="addons-images/addon15.png" alt="Addon 15" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon16.png" alt="Addon 16" />
             <img src="addons-images/addon17.png" alt="Addon 17" />
             <img src="addons-images/addon18.png" alt="Addon 18" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon19.png" alt="Addon 19" />
             <img src="addons-images/addon20.png" alt="Addon 20" />
             <img src="addons-images/addon21.png" alt="Addon 21" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon22.png" alt="Addon 22" />
             <img src="addons-images/addon23.png" alt="Addon 23" />
             <img src="addons-images/addon24.png" alt="Addon 24" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon25.png" alt="Addon 25" />
             <img src="addons-images/addon26.png" alt="Addon 26" />
             <img src="addons-images/addon27.png" alt="Addon 27" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon28.png" alt="Addon 28" />
             <img src="addons-images/addon29.png" alt="Addon 29" />
             <img src="addons-images/addon30.png" alt="Addon 30" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon31.png" alt="Addon 31" />
             <img src="addons-images/addon32.png" alt="Addon 32" />
             <img src="addons-images/addon33.png" alt="Addon 33" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon34.png" alt="Addon 34" />
             <img src="addons-images/addon35.png" alt="Addon 35" />
             <img src="addons-images/addon36.png" alt="Addon 36" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon37.png" alt="Addon 37" />
             <img src="addons-images/addon38.png" alt="Addon 38" />
             <img src="addons-images/addon39.png" alt="Addon 39" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon40.png" alt="Addon 40" />
             <img src="addons-images/addon41.png" alt="Addon 41" />
             <img src="addons-images/addon42.png" alt="Addon 42" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon43.png" alt="Addon 43" />
             <img src="addons-images/addon44.png" alt="Addon 44" />
             <img src="addons-images/addon45.png" alt="Addon 45" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon46.png" alt="Addon 46" />
             <img src="addons-images/addon47.png" alt="Addon 47" />
             <img src="addons-images/addon48.png" alt="Addon 48" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon49.png" alt="Addon 49" />
             <img src="addons-images/addon50.png" alt="Addon 50" />
             <img src="addons-images/addon51.png" alt="Addon 51" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon52.png" alt="Addon 52" />
             <img src="addons-images/addon53.png" alt="Addon 53" />
             <img src="addons-images/addon54.png" alt="Addon 54" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon55.png" alt="Addon 55" />
             <img src="addons-images/addon56.png" alt="Addon 56" />
             <img src="addons-images/addon57.png" alt="Addon 57" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon58.png" alt="Addon 58" />
             <img src="addons-images/addon59.png" alt="Addon 59" />
             <img src="addons-images/addon60.png" alt="Addon 60" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon61.png" alt="Addon 61" />
             <img src="addons-images/addon62.png" alt="Addon 62" />
             <img src="addons-images/addon63.png" alt="Addon 63" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon64.png" alt="Addon 64" />
             <img src="addons-images/addon65.png" alt="Addon 65" />
             <img src="addons-images/addon66.png" alt="Addon 66" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon67.png" alt="Addon 67" />
             <img src="addons-images/addon68.png" alt="Addon 68" />
             <img src="addons-images/addon69.png" alt="Addon 69" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon70.png" alt="Addon 70" />
             <img src="addons-images/addon71.png" alt="Addon 71" />
             <img src="addons-images/addon72.png" alt="Addon 72" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon73.png" alt="Addon 73" />
             <img src="addons-images/addon74.png" alt="Addon 74" />
             <img src="addons-images/addon75.png" alt="Addon 75" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon76.png" alt="Addon 76" />
             <img src="addons-images/addon77.png" alt="Addon 77" />
             <img src="addons-images/addon78.png" alt="Addon 78" />
           </div>
-          <div class="carousel-slide">
+          <div class="carousel-slide" aria-hidden="true">
             <img src="addons-images/addon79.png" alt="Addon 79" />
             <img src="addons-images/addon80.png" alt="Addon 80" />
           </div>
-          
-          <!-- Tu peux ajouter d’autres slides ici en suivant le même modèle -->
+        </div>
+
+        <!-- Contrôles -->
+        <div class="carousel-controls" aria-label="Contrôles du carrousel">
+          <button id="prevBtn" aria-label="Image précédente">◀</button>
+          <button id="nextBtn" aria-label="Image suivante">▶</button>
         </div>
       </div>
 
-      <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3042213523" target="_blank" class="button">Voir la collection</a>
+      <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3042213523" target="_blank" class="button" rel="noopener noreferrer">Voir la collection</a>
     </section>
   </div>
 
   <!-- Section À propos -->
-  <section class="about">
+  <section class="about" aria-label="À propos du serveur">
     <h2>À propos</h2>
-    <p>Notre serveur Garry's Mod est une aventure passionnée par une équipe motivée. On cherche à proposer une expérience RP fun, stable, et libre d'abus !</p>
-    <p>Rejoignez-nous sur Discord ou en jeu pour en savoir plus.</p>
-  </section>
-
-  <!-- JS pour le carrousel -->
-  <script>
-    const carouselTrack = document.getElementById('carouselTrack');
-    const slides = carouselTrack.children;
-    const slideWidth = 600; // largeur fixe d'un slide en px
-    let index = 0;
-
-    setInterval(() => {
-      index++;
-      if (index >= slides.length) index = 0;
-      carouselTrack.style.transform = `translateX(-${index * slideWidth}px)`;
-    }, 3000);
-  </script>
-
-</body>
-</html>
+    <p>Notre serveur Garry's Mod est une aventure passionnée par une équipe motivée. On cherche à proposer une expérience
