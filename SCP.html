@@ -13,8 +13,17 @@
   }
   h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: #ff4444;
+  }
+  #searchInput {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 25px;
+    box-sizing: border-box;
   }
   .accordion {
     background-color: #222;
@@ -62,6 +71,7 @@
 <body>
 
 <h1>Règlement SCP</h1>
+<input type="text" id="searchInput" placeholder="Rechercher un SCP (ex : 106, 049, 682, etc.)" />
 
 <button class="accordion">SCP-106</button>
 <div class="panel">
@@ -156,8 +166,6 @@
 <div class="panel">
   <p class="subheading">Point de vue du SCP :</p>
   <ul>
-    <li>Vous êtes passif et vous n’êtes pas intelligent.</li>
-    <li>Vous pouvez attaquer quand les joueurs autour de vous vous dérangent trop brusquement (s'ils ratent leur /roll ou vous font mal).</li>
     <li>Vous êtes sourd aux ordres.</li>
   </ul>
   <p class="subheading">Point de vue des joueurs :</p>
@@ -255,6 +263,7 @@
 </div>
 
 <script>
+  // Accordéon
   const accordions = document.querySelectorAll('.accordion');
   accordions.forEach(acc => {
     acc.addEventListener('click', () => {
@@ -264,6 +273,23 @@
         panel.style.maxHeight = null;
       } else {
         panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Filtre de recherche
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase();
+    accordions.forEach(acc => {
+      const text = acc.textContent.toLowerCase();
+      const panel = acc.nextElementSibling;
+      if (text.includes(filter)) {
+        acc.style.display = "";
+        panel.style.display = "";
+      } else {
+        acc.style.display = "none";
+        panel.style.display = "none";
       }
     });
   });
