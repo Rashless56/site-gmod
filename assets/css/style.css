@@ -20,3 +20,29 @@ nav a { margin:0 0.5em; }
   .carousel-container { width:100%; }
   .carousel-slide img { width:calc(33.3% - 0.5em); height:auto; }
 }
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  background: #1a1a1a;
+  padding: 0.5em;
+}
+.main-nav a {
+  color: #eee;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background: #333;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.main-nav a:hover {
+  background: #1e90ff;
+}
+@media(max-width: 600px) {
+  .main-nav a {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
