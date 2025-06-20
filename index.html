@@ -16,6 +16,20 @@
       align-items:center;
       min-height:100vh;
     }
+    .side-image {
+      position: fixed;
+      top: 0;
+      width: 20%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .left-image {
+      left: 0;
+    }
+    .right-image {
+      right: 0;
+    }
     .main-content {
       width:100%;
       max-width:1000px;
@@ -105,10 +119,14 @@
   </style>
 </head>
 <body>
-
-  <div class="main-content">
+    <!-- Images étendues -->
+    <img src="image1.png" alt="Image gauche" class="side-image left-image" />
+    <img src="image2.png" alt="Image droite" class="side-image right-image" />
+    <!-- Contenu principal -->
+    <div class="main-content">
     <img src="logo.png" alt="Logo Serveur" class="logo">
     <h1>Bienvenue sur notre serveur GMod !</h1>
+    <p>Rejoignez une communauté active et amusante sur Garry's Mod.</p>
 
     <nav>
       <a href="reglement.html" class="button">📜 Règlement</a>
