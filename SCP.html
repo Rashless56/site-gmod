@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Règlement SCP - Serveur SCP</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #eee;
+    margin: 20px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff4444;
+  }
+  .accordion {
+    background-color: #222;
+    color: #eee;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+  }
+  .accordion:hover,
+  .accordion.active {
+    background-color: #ff4444;
+    color: white;
+  }
+  .panel {
+    background-color: #333;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 20px;
+    border-radius: 0 0 5px 5px;
+  }
+  .panel p {
+    padding: 10px 0;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .subheading {
+    color: #ff8888;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  ul {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Règlement SCP</h1>
+
+<button class="accordion">SCP-106</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vos cible principale sont les hommes, si le choix s’offre à vous, sinon tuer le premier qui se présente devant vous.</li>
+    <li>Vous avez le noclip, pour pouvoir traverser les murs ou sol (la traversée des surfaces doit rester assez lente). Servez-vous en pour vous “téléporter” où vous voulez sur la map sauf extérieur ou contourner vos victimes et autre.</li>
+    <li>Vous n’avez pas l’autorisation d’ouvrir ou fermer les portes.</li>
+    <li>Si le fémur breaker est enclenché vous devez retourner à votre confinement. Vous avez le droit de repartir si le confinement n’est pas posé sur le sol ou s’il n’y a personne dans votre cellule pour le fémur breaker.</li>
+    <li>Vous êtes intelligent, vous avez le droit de tendre des embuscades sauf à votre confinement ou si vous restez immobile plus de 2 minutes. Vous avez le droit d’abandonner la poursuite si vous savez que vous ne pouvez pas l'attraper.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si SCP-106 est collé à vous, vous ne pouvez pas courir.</li>
+    <li>Si vous arrivez à sortir de la dimension vous devez appliquer un pain RP car vous êtes lourdement blessé.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-682</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous vous attaquez à tous les humains qui passent devant vous.</li>
+    <li>Vous pouvez ouvrir toutes les portes même accréditées.</li>
+    <li>Vous êtes intelligent si vous vous sentez en danger vous pouvez fuir ou essayer de tendre des pièges.</li>
+    <li>Quand vous êtes en état passif vous ne bougez plus mais vous avez le droit de faire des /roll avec les membres du personnel qui tente de vous porter ou autre.</li>
+    <li>Quand vous êtes dans votre acide vous n’avez pas le droit de rugir ou d'attaquer.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>(Non spécifié dans la source)</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-939</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous ciblez tout ce qui fait du bruit (tout ce qui apparaît sur votre écran).</li>
+    <li>Ignorez l’ouverture de la porte de votre confinement quand elle s’ouvre pour un début d'expérience, à la fin vous pouvez essayer de vous échapper calmement en même temps que le personnel sort. (Ne forcez pas la brèche)</li>
+    <li>Vous devez suivre tous les bruits que vous entendez même si vous savez que ça a pour but de vous confiner, les narrations autour de vous comptent.</li>
+    <li>Vous vous attaquez même aux autres SCP.</li>
+    <li>Vous ne reniflez pas, 939 ne peut pas le faire alors épargnez-nous en.</li>
+    <li>Vous avez le droit de répéter les voix que vous avez entendues autour de vous, en particulier celles des gens que vous avez tués.</li>
+    <li>Si vous entendez des gens arriver vers vous, vous pouvez leur tendre une embuscade.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si vous êtes exposé à 939, qu’il est dans la même pièce que vous ou vous a mordue, vous subissez une amnésie de classe-C dans les 5 minutes qui suivent et vous tombez dans les pommes sur le moment.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-096</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous ne vous attaquez seulement à ceux qui vous ont regardé ou qui vous bloquent le chemin lors de votre rage.</li>
+    <li>Vous n’êtes pas intelligent, vous avancez sans but et vous ne forcez pas le regard.</li>
+    <li>Vous devez détruire les portes fermées sur le chemin entre vous et votre cible uniquement, tout abus sera sanctionné.</li>
+    <li>Vous avez le droit d’ouvrir les portes quand vous n’êtes pas en rage.</li>
+    <li>Vous ne pouvez pas ramasser d’objet et de cartes.</li>
+    <li>Quand on vous prend la main vous suivez la personne qui vous la prend, vous pouvez partir uniquement si le joueur s’éloigne trop, si une tesla activée vous sépare ou une porte ou encore si le joueur fait une action qui nécessite ces 2 mains.</li>
+    <li>Si on vous met un sac sur la tête vous ne poursuivrez plus les gens qui vous regardent par la suite.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si vous avez regardé 096 vous êtes autorisé à tenter de le fuir ou juste vous suicider, mais il vous est interdit quand vous êtes dans la même pièce que lui de dodger 096.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-035</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous êtes bien évidemment intelligent. Vous avez de nombreuses connaissances sur la Fondation-SCP dont les autres SCP et comment y survivre.</li>
+    <li>Vous pouvez contrôler grâce à votre clic gauche, à partir du moment où ils sont immobilisés donner leur des ordres avec votre voix.</li>
+    <li>Vous vous attaquez aux gens de votre choix.</li>
+    <li>Votre but principal est de trouver un moyen de vous enfuir.</li>
+    <li>Restez coopératif durant les expériences sauf si vous pensez que celle-ci mette votre intégrité en danger.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si votre regard est attiré vers le masque vous ne bougez plus et attendez que votre personnage le récupère tout seul (sauf UIA ou si vous portez l’objet à distance avec une perche).</li>
+    <li>Si 035 vous parle vous devez l'écouter, suivant les rôles vous pouvez plus ou moins résister mais pas plus de 15 secondes.</li>
+    <li>Une fois sous le contrôle de 035 vous écoutez tous ces ordres même les plus fous (sauf ce qui sort du règlement RP basique).</li>
+    <li>Vous n’avez pas le droit de vous retourner contre 035 une fois sous son contrôle même après qu’il soit mort vous continuez de suivre ces ordres.</li>
+    <li>Tous les membres du personnel ayant été sous le contrôle de 035 doivent être abattus.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-066</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous êtes passif et vous n’êtes pas intelligent.</li>
+    <li>Vous pouvez attaquer quand les joueurs autour de vous vous dérangent trop brusquement (s'ils ratent leur /roll ou vous font mal).</li>
+    <li>Vous êtes sourd aux ordres.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si vous vous trouvez dans la même pièce que SCP-066 vous subissez un effet sonore stressant pendant tout le temps où vous êtes présent.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-966</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous êtes invisible sauf si vous êtes très proche d’une lumière, ne vous montrez pas, chassez la nuit.</li>
+    <li>Vous ne devez pas attaquer un joueur si celui-ci ne fait pas de bruit, vous devez le traquer silencieusement.</li>
+    <li>Vous ne pouvez pas ouvrir ou fermer les portes.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si SCP-966 est près de vous vous avez des hallucinations auditives et visuelles (brouillard, sons étranges).</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-049</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous devez guérir tous les humains que vous rencontrez en utilisant votre touche spéciale.</li>
+    <li>Vous pouvez attaquer ceux qui vous résistent ou qui tentent de fuir.</li>
+    <li>Vous êtes intelligent et persuasif, utilisez ça pour capturer vos victimes.</li>
+    <li>Vous ne pouvez pas ouvrir ou fermer les portes.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si SCP-049 vous touche avec sa touche spéciale, vous devenez un zombie contrôlé par SCP-049 (SCP-049-2).</li>
+    <li>Vous devez suivre les ordres de SCP-049-2.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-049-2</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous êtes sous le contrôle de SCP-049.</li>
+    <li>Vous attaquez tout ce qui n’est pas SCP-049 et les humains.</li>
+    <li>Vous ne pouvez pas ouvrir ou fermer les portes.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Vous devez obéir aux ordres donnés par SCP-049.</li>
+    <li>Vous ne pouvez pas parler sauf si SCP-049 l’autorise.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-999</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous êtes pacifique et joyeux.</li>
+    <li>Vous pouvez guérir et calmer les joueurs avec votre contact.</li>
+    <li>Vous ne devez pas attaquer ou blesser qui que ce soit.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Vous pouvez vous approcher de SCP-999 pour recevoir des bonus de santé et de moral.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-173</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous ne bougez que quand personne ne vous regarde.</li>
+    <li>Vous attaquez en brisant le cou de vos victimes.</li>
+    <li>Vous pouvez vous déplacer rapidement entre les points de vue fermés.</li>
+    <li>Vous ne pouvez pas ouvrir ou fermer les portes.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Si vous regardez SCP-173, il ne peut pas bouger.</li>
+    <li>Clignez des yeux avec prudence.</li>
+  </ul>
+</div>
+
+<button class="accordion">SCP-1123</button>
+<div class="panel">
+  <p class="subheading">Point de vue du SCP :</p>
+  <ul>
+    <li>Vous êtes passif et ne devez pas attaquer sauf si on vous dérange directement.</li>
+    <li>Vous pouvez manipuler des objets à distance.</li>
+  </ul>
+  <p class="subheading">Point de vue des joueurs :</p>
+  <ul>
+    <li>Évitez de provoquer SCP-1123 pour ne pas déclencher une réaction agressive.</li>
+  </ul>
+</div>
+
+<script>
+  const accordions = document.querySelectorAll('.accordion');
+  accordions.forEach(acc => {
+    acc.addEventListener('click', () => {
+      acc.classList.toggle('active');
+      const panel = acc.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
