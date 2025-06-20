@@ -101,8 +101,8 @@
     }
     /* Carrousel styles */
     .carousel-container {
-      position: relative;
-      width: 600px; /* 3 images x 180px wide */
+      width: 100%;
+      max-width: 600px;
       margin: 0 auto 20px;
       overflow: hidden;
       border-radius: 12px;
@@ -113,14 +113,15 @@
       width: max-content; /* largeur automatique en fonction du contenu */
     }
     .carousel-slide {
+      width: 100%;
       display: flex;
-      width: 600px; /* largeur d'un slide = 3 images * 180px */
       justify-content: space-between;
-      flex-shrink: 0; /* empêche le rétrécissement */
+      flex-shrink: 0;
     }
+
     .carousel-slide img {
-      width: 180px;
-      height: 120px;
+      width: 30%;
+      height: auto;
       border-radius: 12px;
       object-fit: cover;
     }
@@ -133,6 +134,21 @@
       text-align: center;
       z-index: 1;
     }
+
+    @media (max-width: 768px) {
+      .side-image {
+        display: none;
+      }
+    .main-content {
+      margin-left: 5%;
+      margin-right: 5%;
+      padding: 20px 10px;
+    }
+  .about {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
   </style>
 </head>
 <body>
@@ -326,16 +342,27 @@
 
   <!-- JS pour le carrousel -->
   <script>
-    const carouselTrack = document.getElementById('carouselTrack');
-    const slides = carouselTrack.children;
-    const slideWidth = 600; // largeur fixe d'un slide en px
-    let index = 0;
+const carouselTrack = document.getElementById('carouselTrack');
+const slides = carouselTrack.children;
 
-    setInterval(() => {
-      index++;
-      if (index >= slides.length) index = 0;
-      carouselTrack.style.transform = `translateX(-${index * slideWidth}px)`;
-    }, 3000);
+function updateSlideWidth() {
+  return document.querySelector('.carousel-container').offsetWidth;
+}
+
+let slideWidth = updateSlideWidth();
+let index = 0;
+
+window.addEventListener('resize', () => {
+  slideWidth = updateSlideWidth();
+  // repositionne le carousel si besoin
+  carouselTrack.style.transform = `translateX(-${index * slideWidth}px)`;
+});
+
+setInterval(() => {
+  index++;
+  if (index >= slides.length) index = 0;
+  carouselTrack.style.transform = `translateX(-${index * slideWidth}px)`;
+}, 3000);
   </script>
 
 </body>
