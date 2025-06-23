@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Groupe d'interet</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: #ffffff;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurrection du Chaos - Groupe d'Intérêt</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
 
-        header, footer {
-            background-color: #202020;
-            padding: 15px;
-            text-align: center;
-        }
+    h1, h2, h3 {
+      color: #ff5252;
+    }
 
-        h1, h2, h3 {
-            color: #f0a500;
-        }
+    section.groupe-insurrection {
+      background-color: #1e1e1e;
+      border-left: 5px solid #d32f2f;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 900px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
+    .groupe-insurrection .description {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
 
-        table, th, td {
-            border: 1px solid #ffffff33;
-        }
+    .role {
+      background-color: #2a2a2a;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 4px solid #c62828;
+      border-radius: 6px;
+    }
 
-        th, td {
-            padding: 12px;
-            text-align: center;
-        }
+    .role h3 {
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
 
-        thead {
-            background-color: #1a1a1a;
-        }
+    .role p {
+      margin: 0;
+      line-height: 1.5;
+    }
 
-        section {
-            margin-bottom: 40px;
-        }
-    </style>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/style_menu.css" />
+    a.retour {
+      display: inline-block;
+      margin-top: 30px;
+      color: #1e90ff;
+      text-decoration: none;
+    }
+
+    a.retour:hover {
+      text-decoration: underline;
+    }
+  </style>
+   <link rel="stylesheet" href="assets/css/style.css" />
+   <link rel="stylesheet" href="assets/css/style_menu.css" />
 </head>
-<body>
+
   <header>
     <h1>🎭 Roles - Groupe d'Intérêt</h1>
     <nav class="main-nav">
@@ -77,84 +93,32 @@
       <a class="button" href="discord.html">💬 Discord</a>
     </nav>
   </header>
+<body>
 
-    <section>
-        <h2>Présentation</h2>
-        <p><strong>Objectif :</strong>
-    <ul>
-      <li>Utiliser les SCP pour dominer militairement et politiquement.</li>
-      <li>Saboter les projets de la Fondation SCP et voler des anomalies.</li>
-      <li>Libérer certains SCP jugés "utiles" ou exploitables à des fins de guerre ou de manipulation psychologique.</li>
-    </ul>
-        <p><strong>Règlement :</strong> Le personnel technique doit respecter les consignes de sécurité, suivre les ordres de sa hiérarchie et maintenir les infrastructures sans interférer avec les opérations des autres départements sauf en cas d'urgence.</p>
-    </section>
+  <section class="groupe-insurrection">
+    <h1>☠️ Insurrection du Chaos</h1>
+    <p class="description">
+      Vous êtes une <strong>faction très hostile à la Fondation SCP</strong> et il n’y a presque aucun arrangement possible entre vous.<br>
+      Votre objectif est le <strong>vol de données sensibles</strong> et de <strong>SCP</strong>, le <strong>kidnapping d'employés importants</strong>, et <strong>la création de chaos</strong> dans le site pour parvenir à vos fins.
+    </p>
 
-    <section>
-        <h2>Rôles disponibles</h2>
+    <div class="role">
+      <h3>🔫 Soldat de l'Insurrection</h3>
+      <p>
+        Vous avez des connaissances basiques sur les SCP de classe <strong>Safe à Keter</strong> (comment y survivre et les appréhender).<br>
+        Vous devez suivre les ordres de votre supérieur, mais si celui-ci est absent ou indisponible, <strong>vous prenez vos propres décisions</strong> en fonction de la situation.
+      </p>
+    </div>
 
-        <h3>🧹 Concierge</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Accréditation</th>
-                    <th>Itération</th>
-                    <th>Connaissances SCP</th>
-                    <th>Responsabilités</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Niveau 1</td>
-                    <td>Niveau 0</td>
-                    <td>Aucune (sauf existence des classe-D)</td>
-                    <td>Entretien des locaux, confiance aveugle en la Fondation</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="role">
+      <h3>🧠 Adjudant de l'Insurrection</h3>
+      <p>
+        Vous êtes le supérieur de l’équipe d’assaut.<br>
+        Vous possédez une connaissance <strong>plus approfondie que vos hommes</strong> sur les SCP, ainsi qu’une bonne compréhension des objectifs de votre organisation.<br>
+        Vous êtes chargé de <strong>mener à bien les attaques ciblant la Zone-74</strong> et de coordonner vos troupes.
+      </p>
+    </div>
+  </section>
 
-        <h3>🔧 Agent du DI&ST</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Accréditation</th>
-                    <th>Itération</th>
-                    <th>Connaissances SCP</th>
-                    <th>Responsabilités</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Niveau 3</td>
-                    <td>Niveau 4 (confinement), Niveau 3 (général)</td>
-                    <td>Safe à Keter (fonctionnement & maintenance des systèmes SCP)</td>
-                    <td>Maintenance technique, réparations systèmes, logistique du site</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>🏗️ Chef de projet</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Accréditation</th>
-                    <th>Itération</th>
-                    <th>Connaissances SCP</th>
-                    <th>Responsabilités</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Niveau 4</td>
-                    <td>Niveau 4</td>
-                    <td>Totale sur les systèmes techniques liés aux SCP</td>
-                    <td>Direction de la branche, gestion de chantiers, coordination technique, indépendance vis-à-vis des scientifiques (hors urgence)</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <footer>
-        <p>© Serveur SCP - Département Ingénierie et Service Technique</p>
-    </footer>
 </body>
 </html>
