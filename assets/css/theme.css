@@ -1,4 +1,4 @@
-/* Thème sombre SCP - Style immersif techno/militaire */
+/* Thème sombre SCP - Style techno/militaire sans animation */
 body {
     font-family: "Courier New", monospace;
     background-color: #000;
@@ -19,7 +19,6 @@ body {
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
     width: 90%;
     max-width: 600px;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
 h1 {
@@ -27,14 +26,12 @@ h1 {
     color: #ff4d4d;
     margin-bottom: 20px;
     text-shadow: 0 0 10px #ff4d4d;
-    animation: fadeInDown 1s ease-in-out;
 }
 
 p {
     font-size: 1.2em;
     color: #ccc;
     margin-bottom: 30px;
-    animation: fadeInUp 1s ease-in-out;
 }
 
 .button {
@@ -47,7 +44,6 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
-    animation: fadeIn 2s ease-in-out;
 }
 
 .button:hover {
