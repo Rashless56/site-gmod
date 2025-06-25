@@ -1,63 +1,72 @@
-/* Thème sombre SCP avec accents rouge vif */
+/* Thème sombre SCP - Style immersif techno/militaire */
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #0d0d0d;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f0f0f0;
-}
-
-h1, h2, h3, h4, h5 {
-  color: #ff3c3c;
-  text-shadow: 1px 1px 2px #000;
-}
-
-a {
-  color: #ff3c3c;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-button {
-  background-color: #ff3c3c;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #cc2f2f;
+    font-family: "Courier New", monospace;
+    background-color: #000;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.card {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(255, 60, 60, 0.1);
+h1 {
+    font-size: 3em;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff4d4d;
+    animation: fadeInDown 1s ease-in-out;
 }
 
-footer {
-  text-align: center;
-  margin-top: 50px;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #aaa;
-  border-top: 1px solid #222;
+p {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.button {
+    padding: 12px 25px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #ff1a1a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.button:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
