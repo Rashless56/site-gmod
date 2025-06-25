@@ -7,15 +7,16 @@
   <link rel="stylesheet" href="assets/css/theme.css">
   <title>Serveur GMod - Accueil</title>
   <style>
+  <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
-      background-color: #121212;
-      color: white;
-      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
@@ -28,6 +29,7 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
+      filter: grayscale(90%) brightness(0.6);
     }
     .left-image {
       left: 0;
@@ -45,21 +47,22 @@
       flex-grow: 1;
     }
     .logo {
-      width: 150px;
+      width: 120px;
       margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px #f00);
     }
     .button {
-      background-color: #1e90ff;
+      background-color: #b00;
       color: white;
       padding: 10px 20px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       margin: 5px;
       display: inline-block;
       transition: background 0.3s;
     }
     .button:hover {
-      background-color: #0f75d1;
+      background-color: #900;
     }
     .dropdown {
       position: relative;
@@ -68,21 +71,21 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: #1e1e1e;
+      background-color: #141414;
       min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+      border-radius: 6px;
       z-index: 2;
     }
     .dropdown-content a {
-      color: white;
-      padding: 10px 16px;
+      color: #ddd;
+      padding: 10px 14px;
       text-decoration: none;
       display: block;
       text-align: left;
     }
     .dropdown-content a:hover {
-      background-color: #333;
+      background-color: #292929;
     }
     .dropdown:hover .dropdown-content {
       display: block;
@@ -90,51 +93,62 @@
     .steam-collection {
       margin-top: 50px;
       padding: 30px;
-      background-color: #1a1a1a;
+      background-color: #121212;
+      border: 1px solid #333;
       border-radius: 12px;
       text-align: center;
     }
     .steam-collection h2 {
       margin-bottom: 10px;
+      color: #ff4444;
+      font-size: 1.5em;
     }
     .steam-collection p {
       margin-bottom: 15px;
       font-size: 1.1em;
+      color: #ccc;
     }
-    /* Carrousel styles */
     .carousel-container {
       position: relative;
-      width: 600px; /* 3 images x 180px wide */
+      width: 600px;
       margin: 0 auto 20px;
       overflow: hidden;
       border-radius: 12px;
+      border: 1px solid #444;
     }
     .carousel-track {
       display: flex;
       transition: transform 1s ease;
-      width: max-content; /* largeur automatique en fonction du contenu */
+      width: max-content;
     }
     .carousel-slide {
       display: flex;
-      width: 600px; /* largeur d'un slide = 3 images * 180px */
+      width: 600px;
       justify-content: space-between;
-      flex-shrink: 0; /* empêche le rétrécissement */
+      flex-shrink: 0;
     }
     .carousel-slide img {
       width: 180px;
       height: 120px;
-      border-radius: 12px;
+      border-radius: 6px;
       object-fit: cover;
+      filter: brightness(0.85);
+      transition: transform 0.3s;
     }
-    .about {
-      padding: 30px;
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      margin-left: 20%;
-      margin-right: 20%;
+    .carousel-slide img:hover {
+      transform: scale(1.05);
+    }
+    header h1 {
+      color: #ff4444;
       text-align: center;
-      z-index: 1;
+      margin: 20px 0;
+      font-size: 2.2em;
     }
+    nav.main-nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
   </style>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/style_menu.css" />
