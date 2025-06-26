@@ -122,8 +122,9 @@
   </header>
 <input type="text" id="searchInput" placeholder="Rechercher un SCP (ex : 106, 049, 682, etc.)" />
 
-<button class="accordion">SCP-106</button>
-<div class="panel">
+<div class="accordion-container">
+  <button class="accordion-button" onclick="toggleAccordion(this)">SCP-106</button>
+  <div class="accordion-content">
   <p class="subheading">Point de vue du SCP :</p>
   <ul>
     <li>Vos cible principale sont les hommes, si le choix s’offre à vous, sinon tuer le premier qui se présente devant vous.</li>
@@ -139,7 +140,8 @@
   </ul>
 </div>
 
-<button class="accordion">SCP-682</button>
+<button class="accordion-button" onclick="toggleAccordion(this)">SCP-682</button>
+<div class="accordion-content">
 <div class="panel">
   <p class="subheading">Point de vue du SCP :</p>
   <ul>
@@ -155,7 +157,8 @@
   </ul>
 </div>
 
-<button class="accordion">SCP-939</button>
+<button class="accordion-button" onclick="toggleAccordion(this)">SCP-939</button>
+<div class="accordion-content">
 <div class="panel">
   <p class="subheading">Point de vue du SCP :</p>
   <ul>
