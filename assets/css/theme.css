@@ -46,4 +46,5 @@ p {
 .button:hover {
     background-color: #cc0000;
     transform: scale(1.05);
+    border: 2px solid #ff4d4d; /* Ajout de la bordure rouge vif */
 }
